@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com --><!-- Last Published: Fri Aug 12 2022 16:38:44 GMT+0000 (Coordinated Universal Time) -->
+
 <html
   data-wf-domain="thebigbed.webflow.io"
   data-wf-page="5e9c9182a2cd3d29e800819d"
@@ -93,6 +93,11 @@
     <style>
       body {
         overflow: hidden !important;
+      }
+    </style>
+    <style>
+      .w-webflow-badge {
+        display: none !important;
       }
     </style>
     <style>
@@ -563,24 +568,11 @@
         alt=""
         class="audio-icon play"
       />
-      <div
-        data-w-id="cb41bf76-c28f-e567-12bb-d8b43ca7714c"
-        class="read-out-load"
-      >
-        <div class="label">read out loud</div>
-      </div>
     </div>
     <div class="audio w-embed">
       <!-- Audio -->
-      <audio id="audio" ontimeupdate="playTranscript()">
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page12/012_page12-kid-FULL-mix_mixdown.mp3?raw=true"
-          type="audio/mp3"
-        />
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page12/012_page12-kid-FULL-mix_mixdown.ogg?raw=true"
-          type="audio/ogg"
-        />
+      <audio id="audio">
+        <source src="./imgs/backtrack.mp3" type="audio/mp3" />
       </audio>
     </div>
     <script

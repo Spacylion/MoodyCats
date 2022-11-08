@@ -59,6 +59,11 @@
         }
       }
     </style>
+    <style>
+      .w-webflow-badge {
+        display: none !important;
+      }
+    </style>
     <script
       src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"
@@ -257,7 +262,7 @@
           class="speech-bubble-wrapper"
         >
           <div id="transcriptWrapper" class="transcriptwrapper">
-            <div id="transcript" class="transcript">
+            <div class="transcript">
               <div class="word-wrapper">We were never</div>
               <div class="word-wrapper">
                 <div class="speech-text">loved or treated</div>
@@ -542,24 +547,11 @@
         alt=""
         class="audio-icon play"
       />
-      <div
-        data-w-id="2bfe7205-dab0-f2f1-dc7b-3a090e4a2e57"
-        class="read-out-load"
-      >
-        <div class="label">read out loud</div>
-      </div>
     </div>
     <div class="audio w-embed">
       <!-- Audio -->
-      <audio id="audio" ontimeupdate="playTranscript()">
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page1/01_page1-2-kid.mp3?raw=true"
-          type="audio/mp3"
-        />
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page1/01_page1-2-kid.ogg?raw=true"
-          type="audio/ogg"
-        />
+      <audio id="audio">
+        <source src="./imgs/backtrack.mp3" type="audio/mp3" />
       </audio>
     </div>
     <script

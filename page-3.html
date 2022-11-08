@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com --><!-- Last Published: Fri Aug 12 2022 16:38:44 GMT+0000 (Coordinated Universal Time) -->
+
 <html
   data-wf-domain="thebigbed.webflow.io"
   data-wf-page="5e9c9182a2cd3d0884008194"
@@ -107,6 +107,11 @@
     <style>
       body {
         overflow: hidden !important;
+      }
+    </style>
+    <style>
+      .w-webflow-badge {
+        display: none !important;
       }
     </style>
     <style>
@@ -252,7 +257,7 @@
       <div class="div-block-8">
         <div class="father-sitting-down-pg3">
           <img
-            src="https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e71209aa814d7b3f6528e6c_father-sitting-down-listening-to-daughter-3%202.png"
+            src="./imgs/monitorwithhead.png"
             data-w-id="0917e2fb-ea84-8eda-6e38-b7c096824610"
             style="
               -webkit-transform: translate3d(30px, 0, 0) scale3d(1, 1, 1)
@@ -309,21 +314,17 @@
           />
         </div>
         <div id="transcriptWrapper" class="p3-content-block">
-          <div id="transcript" class="div-block-44">
+          <div class="div-block-44">
             <div class="word-wrapper inline">
               <div class="speech-text speech-copy">
-                I have no problem with you during the day.
+                That they started chasing mice, <br />
               </div>
             </div>
             <div class="word-wrapper inline">
-              <div class="speech-text speech-copy">
-                You’re a wonderful wrestler.<br />
-              </div>
+              <div class="speech-text speech-copy">climbing trees,<br /></div>
             </div>
             <div class="word-wrapper inline">
-              <div class="speech-text speech-copy">
-                You’re also very <br />gifted at the art of the horsie ride.<br />
-              </div>
+              <div class="speech-text speech-copy">began to mur <br /></div>
             </div>
           </div>
         </div>
@@ -368,7 +369,7 @@
               </div>
               <div class="father-sitting-down-pg3 mobile">
                 <img
-                  src="https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e71209aa814d7b3f6528e6c_father-sitting-down-listening-to-daughter-3%202.png"
+                  src="./imgs/monitorwithhead.png"
                   alt=""
                   class="father-sitting-down-img-pg3 mobile"
                 />
@@ -586,24 +587,11 @@
         alt=""
         class="audio-icon play"
       />
-      <div
-        data-w-id="d8de8bde-bbeb-9e7d-c8dc-6572f998b2dc"
-        class="read-out-load"
-      >
-        <div class="label">read out loud</div>
-      </div>
     </div>
     <div class="audio w-embed">
       <!-- Audio -->
-      <audio id="audio" ontimeupdate="playTranscript()">
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page3/03_page3-4-kid.mp3?raw=true"
-          type="audio/mp3"
-        />
-        <source
-          src="https://github.com/anferneeg/The-big-bed/blob/master/_page3/03_page3-4-kid.ogg?raw=true"
-          type="audio/ogg"
-        />
+      <audio id="audio">
+        <source src="./imgs/backtrack.mp3" type="audio/mp3" />
       </audio>
     </div>
     <script

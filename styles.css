@@ -398,6 +398,10 @@ label {
   background-color: #fff;
   border: 1px solid #ccc;
 }
+
+.white {
+  color: white;
+}
 .w-input:-moz-placeholder,
 .w-select:-moz-placeholder {
   color: #999;
@@ -2797,7 +2801,7 @@ textarea.w-select {
   bottom: auto;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e6a346365f9f1ae1d38d116_background_left-v2-pg2-.jpg");
+  background-image: url("./imgs/page2backgrn.png");
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2892,7 +2896,7 @@ textarea.w-select {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  background-color: #fbbe35;
+  background-color: #35b6fb;
 }
 .girl-and-cat-sitdown {
   position: absolute;
@@ -6329,7 +6333,7 @@ textarea.w-select {
     height: 100vh;
   }
   .page-mobile.page-mobile---1 {
-    background-color: #ff0950;
+    background-color: #c93c28;
   }
   .dad-foot-p2-mobile {
     position: absolute;
