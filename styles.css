@@ -3181,7 +3181,7 @@ textarea.w-select {
   z-index: 3;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e8f55fcbf599377a90cfed6_girl-pointing-2.png");
+  background-image: url("./imgs/window_with_head.png");
   background-position: -80px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3201,7 +3201,7 @@ textarea.w-select {
   z-index: 1;
   width: 90vw;
   height: 90vh;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e8f55fc4ae66c5e8960e8d1_very-important-piggyback-clipboard-2.png");
+  background-image: url("./imgs/sign.png");
   background-position: 100% 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3259,7 +3259,7 @@ textarea.w-select {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  background-color: #a5d9c7;
+  background-color: white;
 }
 .page-col.page-5-right {
   position: relative;
@@ -3276,7 +3276,7 @@ textarea.w-select {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  background-color: #df5c9f;
+  background-color: #769488;
 }
 .page-col.page-10-left {
   position: relative;
@@ -3336,7 +3336,7 @@ textarea.w-select {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e73afe32487b769999cabd9_mom-dad-clipboard.gif");
+  background-image: url("./imgs/anatomy.png");
   background-position: 50% 100%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -4274,7 +4274,7 @@ textarea.w-select {
   z-index: 5;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e8f55fcbf599377a90cfed6_girl-pointing-2.png");
+  background-image: url("./imgs/window_with_head.png");
   background-position: -80px 0;
   background-size: cover;
   -webkit-transform: scale(0.8);
