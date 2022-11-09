@@ -3259,7 +3259,7 @@ textarea.w-select {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  background-color: white;
+  background-color: #b09e9e;
 }
 .page-col.page-5-right {
   position: relative;
