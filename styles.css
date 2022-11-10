@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap");
 
+@font-face {
+  font-family: "MoodyCatNFT";
+  src: url("/fonts/Moodyfont.ttf") format("truetype");
+}
+
 html {
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   height: 100%;
@@ -210,7 +215,7 @@ body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
   font-size: 14px;
   line-height: 20px;
   color: #333;
@@ -1234,7 +1239,7 @@ textarea.w-select {
   bottom: 0;
   left: 0;
   color: #fff;
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
   font-size: 17px;
   line-height: 1.2;
   font-weight: 300;
@@ -2129,7 +2134,7 @@ textarea.w-select {
 }
 .body {
   overflow: hidden;
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
 }
 .body.credit {
   overflow: hidden;
@@ -4596,7 +4601,7 @@ textarea.w-select {
   text-decoration: underline;
 }
 .bold-text {
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
 }
 .overlay {
   position: fixed;
@@ -4712,7 +4717,7 @@ textarea.w-select {
 }
 .div-block-63 {
   margin-top: 60px;
-  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "MoodyCatNFT";
   color: #fff;
 }
 .div-block-64 {
@@ -5601,7 +5606,7 @@ textarea.w-select {
     display: flex;
     margin-top: 5px;
     padding-top: 0;
-    font-family: "Fuzzy Bubbles", cursive;
+    font-family: "MoodyCatNFT";
   }
   .speech-text.speech-copy {
     line-height: 1.1rem;
@@ -5614,7 +5619,7 @@ textarea.w-select {
     line-height: 0.9rem;
   }
   .speech-text.speech-copy.mobile {
-    font-family: "Fuzzy Bubbles", cursive;
+    font-family: "MoodyCatNFT";
     font-size: 2vw;
     line-height: 1rem;
   }
@@ -6237,7 +6242,7 @@ textarea.w-select {
     width: 100%;
   }
   .content-block-p1-mobile {
-    font-family: "Fuzzy Bubbles", cursive;
+    font-family: "MoodyCatNFT";
     font-size: 16px;
     text-align: center;
   }
@@ -6277,7 +6282,7 @@ textarea.w-select {
   }
   .div-block-33 {
     display: inline-block;
-    font-family: "Fuzzy Bubbles", cursive;
+    font-family: "MoodyCatNFT";
   }
   .div-block-34 {
     display: -webkit-box;
