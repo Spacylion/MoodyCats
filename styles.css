@@ -209,12 +209,13 @@ th {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: #fff;
+  background-color: #14396d;
   font-family: "Fuzzy Bubbles", cursive;
   font-size: 14px;
   line-height: 20px;
   color: #333;
 }
+
 html.w-mod-touch * {
   background-attachment: scroll !important;
 }
@@ -1916,7 +1917,7 @@ textarea.w-select {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #576bdb;
 }
 .page.page--8 {
   background-color: #a7d8c5;
