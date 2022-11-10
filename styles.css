@@ -577,6 +577,10 @@ textarea.w-select {
   margin-right: auto;
   max-width: 940px;
 }
+
+.bank {
+  margin-top: 4rem;
+}
 .w-container:after,
 .w-container:before {
   content: " ";
