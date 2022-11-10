@@ -216,8 +216,8 @@ body {
   min-height: 100%;
   background-color: #fff;
   font-family: "MoodyCatNFT";
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 30px;
   color: #333;
 }
 
@@ -1925,7 +1925,7 @@ textarea.w-select {
   background-color: #576bdb;
 }
 .page.page--8 {
-  background-color: #a7d8c5;
+  background-color: #14396d;
 }
 .page.page--9.mobile {
   display: none;
@@ -2136,7 +2136,7 @@ textarea.w-select {
   overflow: hidden;
   font-family: "MoodyCatNFT";
 }
-.body.credit {
+.body.Disclaimer {
   overflow: hidden;
 }
 .text-block-2 {
@@ -2148,6 +2148,20 @@ textarea.w-select {
   text-shadow: 0 0 20px #abd9da;
   cursor: pointer;
 }
+
+.Connect {
+  font-family: "Blog script w00", sans-serif;
+  color: #fff;
+  font-size: 35px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #abd9da;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #14396d;
+  padding: 14px;
+}
+
 .description-text {
   font-size: 30px;
 }
@@ -2176,7 +2190,7 @@ textarea.w-select {
   -ms-flex-align: center;
   align-items: center;
 }
-.social-wrapper.credit {
+.social-wrapper.Disclaimer {
   top: 30px;
   right: 73px;
   z-index: 98;
@@ -2192,10 +2206,10 @@ textarea.w-select {
 .label.blue.m-t-s {
   margin-top: 6px;
 }
-.label.blue.m-t-s.credit {
+.label.blue.m-t-s.Disclaimer {
   font-size: 18px;
 }
-.label.blue.m-t-s.credit.yellow {
+.label.blue.m-t-s.Disclaimer.yellow {
   color: #f0d26a;
 }
 .social-icon {
@@ -3546,7 +3560,7 @@ textarea.w-select {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url("https://uploads-ssl.webflow.com/5e3342dacaaf95232245d4cc/5e76839f9105fa09dedfb150_p8-though-bubble-2.gif");
+  background-image: url("./imgs/artpaint.png");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -5450,7 +5464,7 @@ textarea.w-select {
   }
   .description-text.blue {
     font-size: 16px;
-    line-height: 18px;
+    line-height: 24px;
   }
   .description-wrapper {
     width: 100vw;
@@ -5460,7 +5474,7 @@ textarea.w-select {
   .social-wrapper {
     z-index: 3;
   }
-  .social-wrapper.credit {
+  .social-wrapper.Disclaimer {
     position: fixed;
     top: 80px;
     right: 16px;
