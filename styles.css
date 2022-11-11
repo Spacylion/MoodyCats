@@ -2567,6 +2567,11 @@ textarea.w-select {
   width: 50px;
   height: 40px;
 }
+.ConnectButton {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
 .menu-wrapper.dark {
   -webkit-filter: invert(100%);
   filter: invert(100%);
