@@ -2445,7 +2445,7 @@ textarea.w-select {
   bottom: auto;
   display: none;
 }
-.girl-at-door {
+.page2bg {
   position: absolute;
   left: 0;
   top: 0;
@@ -2455,6 +2455,21 @@ textarea.w-select {
   width: 100%;
   height: 100%;
   background-image: url("./imgs/page2-main1.png");
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.page2NFT {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-image: url("./imgs/45.png");
+  z-index: -999;
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2664,7 +2679,7 @@ textarea.w-select {
   display: flex;
 }
 .speech-text {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1rem;
 }
 .speech-text.speech-copy {
@@ -2821,6 +2836,10 @@ textarea.w-select {
 }
 .image-6 {
   width: 100%;
+}
+.image-nft {
+  width: 100%;
+  z-index: 999;
 }
 .lottie-animation {
   position: absolute;
