@@ -412,6 +412,10 @@ window.addEventListener("load", () => {
 function toHomePage() {
   window.location.pathname !== "/" ? (window.location.pathname = "/") : ""
 }
+async function changeNFT() {
+  sessionStorage.clear()
+  await onConnect()
+}
 async function onConnect() {
   sessionStorage.clear()
   try {
@@ -448,6 +452,7 @@ async function onProvider(provider) {
 }
 
 function readValue() {
+  let NFTInstance = new wab3Object.eth.Contract(NFTABI, NFTAddress)
   Promise.all([NFTInstance.methods.tokensOfOwner(metaMaskAddress).call()]).then(
     async ([tokensOfOwner]) => {
       console.log("tokensOfOwner:", tokensOfOwner)
