@@ -5351,6 +5351,27 @@ textarea.w-select {
   box-shadow: 6px 6px 0 0 #4d0601;
 }
 
+.modal#exampleModal {
+  margin: auto;
+  height: 50%;
+  padding: 10px;
+  opacity: 1 !important;
+  z-index: 100000 !important;
+}
+
+.modal#exampleModal img {
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, .2) !important;
+  margin: 10px;
+  border-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.modal#exampleModal img:hover {
+  opacity: 0.6;
+}
+
 .div-block-59 {
   display: -webkit-box;
   display: -webkit-flex;

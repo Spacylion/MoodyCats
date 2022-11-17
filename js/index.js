@@ -371,13 +371,7 @@ const NFTABI = [
   },
 ];
 
-let wab3Object,
-  web3Modal,
-  metaMaskAddress,
-  NFTInstance,
-  NFTImageURI,
-  tokensOfOwner;
-
+let wab3Object, web3Modal, metaMaskAddress;
 window.addEventListener("load", () => {
   const Web3Modal = window.Web3Modal.default;
   web3Modal = new Web3Modal({
@@ -390,11 +384,13 @@ window.addEventListener("load", () => {
       .then((accounts) => {
         if (accounts.length) {
           if (window.location.pathname === "/") {
-            document.getElementById("startstory").style.display = "block";
-            document.getElementById("connectwallet").style.display = "none";
+            if (document.getElementById("startstory"))
+              document.getElementById("startstory").style.display = "block";
+            if (document.getElementById("connectwallet"))
+              document.getElementById("connectwallet").style.display = "none";
           }
           if (sessionStorage.getItem("dataUrl")) {
-            handleRendering(sessionStorage.getItem("dataUrl"));
+            handleRendering();
           } else {
             toHomePage();
           }
@@ -412,8 +408,12 @@ window.addEventListener("load", () => {
 function toHomePage() {
   window.location.pathname !== "/" ? (window.location.pathname = "/") : "";
 }
+async function changeNFT() {
+  sessionStorage.clear();
+  await onConnect();
+}
 async function onConnect() {
-  sessionStorage.clear()
+  sessionStorage.clear();
   try {
     let provider = await web3Modal.connect();
     onProvider(provider);
@@ -437,9 +437,10 @@ async function onProvider(provider) {
     let accounts = await wab3Object.eth.getAccounts();
     metaMaskAddress = accounts[0];
     console.log(metaMaskAddress);
-    NFTInstance = new wab3Object.eth.Contract(NFTABI, NFTAddress);
-    document.getElementById("startstory").style.display = "block";
-    document.getElementById("connectwallet").style.display = "none";
+    if (document.getElementById("startstory"))
+      document.getElementById("startstory").style.display = "block";
+    if (document.getElementById("connectwallet"))
+      document.getElementById("connectwallet").style.display = "none";
     readValue();
   } catch (e) {
     console.log("Could not get a wallet connection", e);
@@ -448,42 +449,60 @@ async function onProvider(provider) {
 }
 
 function readValue() {
+  let NFTInstance = new wab3Object.eth.Contract(NFTABI, NFTAddress);
   Promise.all([NFTInstance.methods.tokensOfOwner(metaMaskAddress).call()]).then(
-    async ([tokensOfOwner]) => {
-      console.log("tokensOfOwner:", tokensOfOwner);
-      tokensOfOwner = tokensOfOwner;
-      if (tokensOfOwner.length) {
-        let tokenURI = await NFTInstance.methods
-          .tokenURI(tokensOfOwner[0])
-          .call();
-        console.log("tokenURI:", tokenURI);
-        tokenURI = tokenURI.replaceAll("://", "/");
-        let tokenURL = "https://sartoshigob.mypinata.cloud/" + tokenURI;
-        console.log("tokenURL:", tokenURL);
-        fetchJSON(tokenURL);
+    async ([tokensOwner]) => {
+      console.log("tokensOwner:", tokensOwner);
+      let tokenURLList = [];
+      if (tokensOwner.length) {
+        document.getElementById("exampleModal").style.display = "block";
+        tokensOwner.forEach(async (NFT, i) => {
+          let tokenURI = await NFTInstance.methods.tokenURI(NFT).call();
+          console.log("i:", i);
+          tokenURI =
+            "https://sartoshigob.mypinata.cloud/" +
+            tokenURI.replaceAll("://", "/");
+          tokenURLList.push(tokenURI);
+
+          if (i + 1 === tokensOwner.length)
+            setTimeout(() => {
+              fetchJSON(tokenURLList);
+            }, 1000);
+        });
       } else {
         alert("No NFT found");
       }
     }
   );
 }
-function fetchJSON(URL) {
-  fetch(URL)
-    .then(async (response) => {
-      let res = await response.json();
-      console.log("response:", res);
-      NFTImageURI = res.image;
-      console.log("NFTImageURI:", NFTImageURI);
-      NFTImageURI = NFTImageURI.replaceAll("://", "/");
-      let NFTImageURL = "https://sartoshigob.mypinata.cloud/" + NFTImageURI;
-      console.log("NFTImageURL:", NFTImageURL);
-      imagetoBase64(NFTImageURL, (dataUrl) => {
-        sessionStorage.setItem("dataUrl", dataUrl);
+function fetchJSON(tokenURLList) {
+  let tokenImgList = [];
+  tokenURLList.forEach((URL) => {
+    fetch(URL)
+      .then(async (response) => {
+        let res = await response.json();
+        let NFTURL = res.image;
+        NFTURL =
+          "https://sartoshigob.mypinata.cloud/" + NFTURL.replaceAll("://", "/");
+        imagetoBase64(NFTURL, (dataUrl) => {
+          tokenImgList.push(dataUrl);
+          var img = document.createElement("img");
+          img.src = dataUrl;
+          img.addEventListener("click", function () {
+            selectNFT(dataUrl);
+          });
+          document.getElementById("modal-content").append(img);
+        });
+      })
+      .catch((error) => {
+        console.log("error:", error);
       });
-    })
-    .catch((error) => {
-      console.log("error:", error);
-    });
+  });
+}
+function selectNFT(dataUrl) {
+  sessionStorage.setItem("dataUrl", dataUrl);
+  document.getElementById("exampleModal").style.display = "none";
+  handleRendering();
 }
 function humanized(number, fix) {
   return Number(number.toString() / 1e9).toFixed(number == 0 ? 3 : fix);
@@ -491,12 +510,6 @@ function humanized(number, fix) {
 
 function addrTruncation(addr) {
   return addr.slice(0, 6) + "…" + addr.slice(addr.length - 4, addr.length);
-}
-
-function disconnect() {
-  wab3Object = null;
-  NFTInstance = null;
-  metaMaskAddress = null;
 }
 
 function notify(msg) {
@@ -522,7 +535,8 @@ function imagetoBase64(url, callback) {
   xhRequest.send();
 }
 
-function handleRendering(dataUrl) {
+function handleRendering() {
+  let dataUrl = sessionStorage.getItem("dataUrl");
   let ele;
   switch (window.location.pathname) {
     case "/page-1.html":
