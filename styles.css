@@ -5351,7 +5351,7 @@ textarea.w-select {
   box-shadow: 6px 6px 0 0 #4d0601;
 }
 
-.modal#exampleModal {
+.modal#exampleModal, .modal#mintModal {
   margin: auto;
   height: 50%;
   padding: 10px;

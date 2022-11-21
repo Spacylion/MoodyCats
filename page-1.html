@@ -115,9 +115,36 @@
     aria-hidden="true">
     <div role="document">
       <div id="modal-content">
-<h3>Select NFT</h3>
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">Select NFT</h3>
+          <button id="mint" onclick="openMintModel()">Mint Token</button>
+        </div>
         <hr>
-        
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="mintModal" tabindex="-1" role="dialog" aria-labelledby="mintModal" aria-hidden="true">
+    <div role="document">
+      <div id="modal-content">
+        <div class="">
+          <h3 class="mb-0">Mint NFT</h3>
+          <hr>
+          <div class="mt-5">
+            <label for="">Select NFT Amount</label>
+            <select id="mintAmount" class="form-control form-control-lg">
+              <option>Select Amount</option>
+              <option>1</option>
+              <option>3</option>
+              <option>5</option>
+              <option>15</option>
+              <option>40</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <button id="onMint" class="mt-5 px-5 py-3" onclick="onMint()">Mint Now</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

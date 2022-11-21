@@ -405,13 +405,16 @@ window.addEventListener("load", () => {
     toHomePage();
   }
 });
+
 function toHomePage() {
   window.location.pathname !== "/" ? (window.location.pathname = "/") : "";
 }
+
 async function changeNFT() {
   sessionStorage.clear();
   await onConnect();
 }
+
 async function onConnect() {
   sessionStorage.clear();
   try {
@@ -475,6 +478,7 @@ function readValue() {
     }
   );
 }
+
 function fetchJSON(tokenURLList) {
   let tokenImgList = [];
   tokenURLList.forEach((URL) => {
@@ -503,6 +507,41 @@ function selectNFT(dataUrl) {
   sessionStorage.setItem("dataUrl", dataUrl);
   document.getElementById("exampleModal").style.display = "none";
   handleRendering();
+}
+
+function openMintModel() {
+  document.getElementById("exampleModal").style.display = "none";
+  document.getElementById("mintModal").style.display = "block";
+}
+
+function closeMintModel() {
+  document.getElementById("exampleModal").style.display = "none";
+  document.getElementById("mintModal").style.display = "none";
+}
+async function onMint() {
+  let amount = document.getElementById("mintAmount").value;
+  console.log("amount:", amount);
+  let NFTInstance = new wab3Object.eth.Contract(NFTABI, NFTAddress);
+  let price = await NFTInstance.methods.nftPrice().call();
+  let value = Number(price) * Number(amount);
+  NFTInstance.methods
+    .mint(amount)
+    .send({
+      from: metaMaskAddress,
+      value: value,
+    })
+    .on("transactionHash", (hash) => {
+      console.log("Transaction Hash: ", hash);
+      notify("Transaction sent to network!");
+    })
+    .on("receipt", async (receipt) => {
+      console.log("Receipt: ", receipt);
+      notify("Minted Successfully!");
+    })
+    .on("error", (error, receipt) => {
+      notify("Transaction failed!");
+      console.log("Error receipt: ", error, receipt);
+    });
 }
 function humanized(number, fix) {
   return Number(number.toString() / 1e9).toFixed(number == 0 ? 3 : fix);
