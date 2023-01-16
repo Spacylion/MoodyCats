@@ -1947,32 +1947,32 @@ window.addEventListener("load", () => {
     cacheProvider: false,
     disableInjectedProvider: false,
   })
-  // if (window.ethereum) {
-  //   window.ethereum
-  //     .request({ method: "eth_accounts" })
-  //     .then((accounts) => {
-  //       if (accounts.length) {
-  //         if (window.location.pathname === "/") {
-  //           if (document.getElementById("startstory"))
-  //             document.getElementById("startstory").style.display = "block"
-  //           if (document.getElementById("connectwallet"))
-  //             document.getElementById("connectwallet").style.display = "none"
-  //         }
-  //         if (sessionStorage.getItem("dataUrl")) {
-  //           handleRendering()
-  //         } else {
-  //           toHomePage()
-  //         }
-  //       } else {
-  //         toHomePage()
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log("err:", err)
-  //     })
-  // } else {
-  //   toHomePage()
-  // }
+  if (window.ethereum) {
+    window.ethereum
+      .request({ method: "eth_accounts" })
+      .then((accounts) => {
+        if (accounts.length) {
+          if (window.location.pathname === "/") {
+            if (document.getElementById("startstory"))
+              document.getElementById("startstory").style.display = "block"
+            if (document.getElementById("connectwallet"))
+              document.getElementById("connectwallet").style.display = "none"
+          }
+          if (sessionStorage.getItem("dataUrl")) {
+            handleRendering()
+          } else {
+            toHomePage()
+          }
+        } else {
+          toHomePage()
+        }
+      })
+      .catch((err) => {
+        console.log("err:", err)
+      })
+  } else {
+    toHomePage()
+  }
 })
 
 function toHomePage() {
