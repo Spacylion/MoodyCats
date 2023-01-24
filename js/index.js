@@ -392,7 +392,7 @@ window.addEventListener("load", () => {
           if (sessionStorage.getItem("dataUrl")) {
             handleRendering();
           } else {
-            toHomePage();
+            // toHomePage();
           }
         } else {
           toHomePage();
@@ -410,12 +410,13 @@ function toHomePage() {
   window.location.pathname !== "/" ? (window.location.pathname = "/") : "";
 }
 
-async function changeNFT() {
+async function changeNFT(e) {
   sessionStorage.clear();
-  await onConnect();
+  await onConnect(e);
 }
 
-async function onConnect() {
+async function onConnect(e) {
+  e.preventDefault();
   sessionStorage.clear();
   try {
     let provider = await web3Modal.connect();
@@ -507,6 +508,7 @@ function fetchJSON(tokenURLList) {
 function selectNFT(dataUrl) {
   sessionStorage.setItem("dataUrl", dataUrl);
   document.getElementById("exampleModal").style.display = "none";
+  window.location.href = "/page-1.html";
   handleRendering();
 }
 
