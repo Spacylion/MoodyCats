@@ -458,7 +458,7 @@ function readValue() {
     async ([tokensOwner]) => {
       console.log("tokensOwner:", tokensOwner);
       let tokenURLList = [];
-      if (tokensOwner.length) {
+      // if (tokensOwner.length) {
         document.getElementById("exampleModal").style.display = "block";
         tokensOwner.forEach(async (NFT, i) => {
           let tokenURI = await NFTInstance.methods.tokenURI(NFT).call();
@@ -473,9 +473,9 @@ function readValue() {
               fetchJSON(tokenURLList);
             }, 1000);
         });
-      } else {
-        alert("No NFT found");
-      }
+      // } else {
+      //   alert("No NFT found");
+      // }
     }
   );
 }
